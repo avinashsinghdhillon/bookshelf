@@ -2,15 +2,15 @@ import React from "react";
 
 function Nav() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-success">
-      <a class="navbar-brand" href="#">Book Shelf</a>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Search</a>
+    <nav className="navbar navbar-expand-lg navbar-light bg-success">
+      <a className="navbar-brand" href="/">Book Shelf</a>
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <a className="nav-link" href="/searchbooks">Search</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Saved</a>
+          <li className="nav-item">
+            <a className="nav-link" href="/savedbooks">Saved</a>
           </li>
         </ul>
       </div>

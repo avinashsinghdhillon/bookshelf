@@ -4,7 +4,6 @@ import API from "../utils/API";
 import DeleteBtn from "../components/DeleteBtn";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, FormBtn } from "../components/Form";
 
 class Savedbooks extends Component {
   state = {
@@ -21,6 +20,7 @@ class Savedbooks extends Component {
       .catch(err => console.log(err));
   };
 
+
   render() {
     return (
       <Container fluid>
@@ -34,6 +34,32 @@ class Savedbooks extends Component {
               </div>
           </Col>
         </Row>
+        <hr></hr>
+        <Row>
+            <Col size="md-12">
+              {!this.state.books.length ? (
+                <h3 className="text-center">No saved books</h3>
+              ) : (
+                <List>
+                  {this.state.books.map(book => {
+                    return (
+                      <ListItem
+                        key={book.id}
+                        id = {book.id}
+                        title={book.title}
+                        author={book.author}
+                        link={book.link}
+                        description={book.description}
+                        image={book.image}
+                        onClick={this.saveBook}
+                        buttonText={"Delete Book"}
+                      />
+                    );
+                  })}
+                </List>
+              )}
+            </Col>
+          </Row>
       </Container>
     );
   }
